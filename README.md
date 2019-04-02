@@ -22,6 +22,7 @@
 */1 * * * * bash saverpath/eyessaver/alert.sh >> saverpath/eyessaver/log 2>&1
 ```
 同样，需要注意修改这里的 `saverpath`
+
 6. 将 init.lua 链接到 hammerspoon 指定的目录：`ln init.lua ~/.hammerspoon/`
 7. 启动 hammerspoon
 8. 安心工作去吧 🕶~
