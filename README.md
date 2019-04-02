@@ -16,7 +16,7 @@
     - init.lua
     - start.sh
     - stop.sh
-3. 初始化配置：`date +%s > saverpath/resttimer`。注意修改这里的 `saverpath`
+3. 初始化配置：`date +%s > saverpath/eyessaver/resttimer`。注意修改这里的 `saverpath`
 4. 将 `alert.sh` 加入 crontab：
 ```
 */1 * * * * bash saverpath/eyessaver/alert.sh >> saverpath/eyessaver/log 2>&1
