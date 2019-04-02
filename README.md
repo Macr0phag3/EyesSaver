@@ -12,13 +12,14 @@
 1. 安装 alerter：https://github.com/vjeantet/alerter
 2. 安装 hammerspoon：http://www.hammerspoon.org/
 3. 由于每个人放置 EyesSaver 的位置不同，你需要修改以下脚本中的 `saverpath`：
-```
-alert.sh
-init.lua
-start.sh
-stop.sh
-```
+    - alert.sh
+    - init.lua
+    - start.sh
+    - stop.sh
+
 4. 将 `alert.sh` 加入 crontab：
-`#*/1 * * * * bash saverpath/eyessaver/alert.sh >> saverpath/eyessaver/log 2>&1`
-同样，需要注意修改这里的 `saverpath`。
+```
+*/1 * * * * bash saverpath/eyessaver/alert.sh >> saverpath/eyessaver/log 2>&1
+```
+同样，需要注意修改这里的 `saverpath`
 5. 安心工作 🕶~
