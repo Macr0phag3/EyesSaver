@@ -39,6 +39,8 @@
 
 ![](https://github.com/Macr0phag3/EyesSaver/blob/master/pics/rest.png)
 
+![](https://github.com/Macr0phag3/EyesSaver/blob/master/pics/postpone.png)
+
 
 ## 自定义
 `alert.sh` 中的 `自定义` 或许是你想要的
