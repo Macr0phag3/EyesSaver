@@ -18,3 +18,5 @@ init.lua
 start.sh
 stop.sh
 ```
+4. 将 `alert.sh` 加入 crontab：`#*/1 * * * * bash saverpath/eyessaver/alert.sh >> saverpath/eyessaver/log 2>&1`。同样，需要注意修改这里的 `saverpath`。
+5. 🕶~
