@@ -49,7 +49,7 @@
 
 
 ## 不一定会 DO 的 TODO
-- [x] install 脚本，直接配置路径
+- [ ] install 脚本，直接配置路径
 
 
 
