@@ -10,7 +10,7 @@
 
 ## 如何使用它？
 1. 安装 alerter：https://github.com/vjeantet/alerter
-2. 安装 hammerspoon：http://www.hammerspoon.org/，并确保配置如下：
+2. 安装 hammerspoon：http://www.hammerspoon.org/ ，并确保配置如下：
 ![](https://github.com/Macr0phag3/EyesSaver/blob/master/pics/hammer.png)
 
 3. 由于每个人放置 EyesSaver 的位置不同，你需要修改以下脚本中的 `saverpath`：
