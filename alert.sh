@@ -32,7 +32,7 @@ if [ "$islocked" == 0 ];then # 未锁定
             echo $logtime "开始休息 $resttime 分钟"
             newtimer=$[$rawtime+($resttime+$worktime)*60]
             echo $newtimer > $saverpath/eyessaver/resttimer
-            
+
             # 启动屏保
             open -a ScreenSaverEngine
             blackhole=$(sleep $[$resttime*60]"eyesaver") # 特殊标记，方便 kill 定位；利用变量屏蔽 kill 事件的输出
@@ -93,7 +93,6 @@ if [ "$islocked" == 0 ];then # 未锁定
 else
     echo $logtime "已启动屏保，休息中"
 fi
-
 
 
 
