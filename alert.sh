@@ -69,7 +69,6 @@ if [ "$islocked" == 0 ];then # 未锁定
             echo $newtimer > $saverpath/eyessaver/resttimer
             
         fi
-
         
     else
         unit="秒"
