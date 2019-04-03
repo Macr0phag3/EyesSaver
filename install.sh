@@ -30,7 +30,7 @@ changepath=(
 )
 
 for filename in ${changepath[@]}; do
-    sed -i '' "s/eyessaver's path/$saverpath/" $filename
+    sed -i '' "s\$eyessaver's path\$$saverpath\$" $filename
 done
 
 echo "> 替换完成路径: 完成\n"
