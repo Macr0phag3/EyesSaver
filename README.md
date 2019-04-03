@@ -13,7 +13,7 @@
 ### 安装依赖
 1. 安装 alerter：https://github.com/vjeantet/alerter
 2. 安装 hammerspoon：http://www.hammerspoon.org/ ，并确保配置如下：
-<img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/hammer.png" alt="Your image title" width="300"/>
+<img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/hammer.png" width="300"/>
 
 ### 方法一、自动配置
 1. 执行 `chmod +x install.sh`，然后运行 `./install.sh`
