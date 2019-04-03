@@ -33,7 +33,7 @@ for filename in ${changepath[@]}; do
     sed -i '' "s\$eyessaver's path\$$saverpath\$" $filename
 done
 
-echo "> 替换完成路径: 完成\n"
+echo "> 替换路径: 完成\n"
 # ----------
 
 date +%s > $saverpath/resttimer
