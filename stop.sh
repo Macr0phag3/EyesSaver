@@ -4,10 +4,10 @@
 saverpath="eyessaver's path"
 ###
 
-date +%s > $saverpath/eyessaver/lockedtimer
+date +%s > $saverpath/lockedtimer
 logtime=$(date +"%Y-%m-%d %H:%M:%S")
-echo $logtime "检测到锁屏事件，暂停工作计时器，开始休息计时器" >> $saverpath/eyessaver/log
-echo 1 > $saverpath/eyessaver/islocked
+echo $logtime "检测到锁屏事件，暂停工作计时器，开始休息计时器" >> $saverpath/log
+echo 1 > $saverpath/islocked
 
 
 # 2019-04-02 18:35:20 bug 记录：

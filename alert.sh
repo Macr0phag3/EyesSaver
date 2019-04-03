@@ -19,9 +19,9 @@ saverpath="eyessaver's path"
 ### 
 
 
-rawtime=$(cat $saverpath/eyessaver/resttimer)
+rawtime=$(cat $saverpath/resttimer)
 delta=$[$(date +%s)-$rawtime]
-islocked=$(cat $saverpath/eyessaver/islocked)
+islocked=$(cat $saverpath/islocked)
 logtime=$(date +"%Y-%m-%d %H:%M:%S")
 
 if [ "$islocked" == 0 ];then # 未锁定
@@ -31,7 +31,7 @@ if [ "$islocked" == 0 ];then # 未锁定
         if [ "$result" == '好的 ☺️' ]; then
             echo $logtime "开始休息 $resttime 分钟"
             newtimer=$[$rawtime+($resttime+$worktime)*60]
-            echo $newtimer > $saverpath/eyessaver/resttimer
+            echo $newtimer > $saverpath/resttimer
 
             # 启动屏保
             open -a ScreenSaverEngine
@@ -66,7 +66,7 @@ if [ "$islocked" == 0 ];then # 未锁定
                 newtimer=$[$rawtime+$worktime*60]
             fi
 
-            echo $newtimer > $saverpath/eyessaver/resttimer
+            echo $newtimer > $saverpath/resttimer
             
         fi
         

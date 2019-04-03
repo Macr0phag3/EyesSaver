@@ -5,10 +5,10 @@ saverpath="eyessaver's path"
 function caffeinateCallback(eventType)
     if (eventType == hs.caffeinate.watcher.screensDidLock) then
         print("screensDidLock")
-        os.execute(saverpath.."/eyessaver/stop.sh")
+        os.execute(saverpath.."/stop.sh")
     elseif (eventType == hs.caffeinate.watcher.screensDidUnlock) then
         print("screensDidUnlock")
-        os.execute(saverpath.."/eyessaver/start.sh")
+        os.execute(saverpath.."/start.sh")
     end
 end
 
