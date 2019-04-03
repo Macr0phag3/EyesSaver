@@ -34,7 +34,7 @@ if [ "$islocked" == 0 ];then # 未锁定
             
             # 启动屏保
             open -a ScreenSaverEngine
-            sleep $[$resttime*60]
+            sleep $[$resttime*60]"eyesaver" # 特殊标记
             /usr/local/bin/alerter -title "护眼助手🕶" -message "休息结束，干活去咯 👊" > /dev/null
         else
             # 推迟休息
