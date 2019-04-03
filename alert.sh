@@ -26,7 +26,7 @@ logtime=$(date +"%Y-%m-%d %H:%M:%S")
 
 if [ "$islocked" == 0 ];then # 未锁定
     if [ "$delta" -ge $[$worktime*60] ];then
-        result=$(/usr/local/bin/alerter -title "护眼助手🕶" -message "眼睛累了吗? 歇会吧 🤔" -timeout 10s -actions "我在忙呢 😒" -closeLabel "好的 ☺️")
+        result=$(/usr/local/bin/alerter -title "护眼助手🕶" -message "眼睛累了吗? 歇会吧 🤔" -timeout 60s -actions "我在忙呢 😒" -closeLabel "好的 ☺️")
         logtime=$(date +"%Y-%m-%d %H:%M:%S")
         if [ "$result" == '好的 ☺️' ]; then
             echo $logtime "开始休息 $resttime 分钟"

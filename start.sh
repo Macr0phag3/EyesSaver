@@ -20,11 +20,18 @@ if [ "$delta" -ge $[3*60] ];then # 锁屏超过 3 分钟，说明是在休息，
     date +%s > $saverpath/eyessaver/resttimer
 
     # 停止 sleep，弹出工作提醒
-    ps -ef|grep "sleep [0-9]*eyesaver"| awk '{print $2}'| xargs kill -9
-    echo $logtime "检测到解锁事件，休息时长 $thetime $unit""，休息结束，开始工作，重置工作计时器" >> $saverpath/eyessaver/log
+    isrested=$(ps -ef|grep "sleep [0-9]*eyesaver")
+    if [ -n "$isrested" ]; then 
+        result=$(/usr/local/bin/alerter -title "护眼助手🕶" -message "要提前结束休息吗? 🤔" -timeout 10s -actions "不用 😒" -closeLabel "好的 ☺️")
+        if [ "$result" == '好的 ☺️' ]; then
+            echo $logtime "提前结束休息" >> $saverpath/eyessaver/log
+            ps -ef|grep "sleep [0-9]*eyesaver"| awk '{print $2}'| xargs kill -9
+        fi
+    else
+        echo $logtime "检测到解锁事件，休息时长 $thetime $unit""，休息结束，开始工作，重置工作计时器" >> $saverpath/eyessaver/log
+    fi
 else
     echo $logtime "检测到解锁事件，休息时长 $thetime $unit""，视为临时打断工作，不重置工作计时器" >> $saverpath/eyessaver/log
 fi
 
 echo 0 > $saverpath/eyessaver/islocked 
-
