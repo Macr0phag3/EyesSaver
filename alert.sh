@@ -34,7 +34,8 @@ if [ "$islocked" == 0 ];then # 未锁定
             
             # 启动屏保
             open -a ScreenSaverEngine
-            sleep $[$resttime*60]; /usr/local/bin/alerter -title "护眼助手🕶" -message "休息结束，干活去咯 👊"
+            sleep $[$resttime*60]
+            /usr/local/bin/alerter -title "护眼助手🕶" -message "休息结束，干活去咯 👊" > /dev/null
         else
             # 推迟休息
             result=$(/usr/local/bin/alerter -title "护眼助手🕶" -message "那推迟 $postpone 分钟? 👀" -timeout 10s -actions "不用 😒","推迟 5 分钟 🌕","推迟 10 分钟 🌗","推迟 15 分钟 🌘","推迟 30 分钟 🌚" -dropdownLabel "其他时长" -closeLabel "好的 ☺️")
