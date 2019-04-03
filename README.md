@@ -43,7 +43,7 @@
 3. 启动 hammerspoon
 
 ### 方法二、手动配置
-1.. 由于每个人放置 EyesSaver 的位置不同，你需要修改以下脚本中的 `saverpath`：
+1. 由于每个人放置 EyesSaver 的位置不同，你需要修改以下脚本中的 `saverpath`：
     - alert.sh
     - init.lua
     - start.sh
