@@ -71,11 +71,12 @@
 
 
 通知：
+
 <img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/rest.png" width="500"/>
 
-![](https://github.com/Macr0phag3/EyesSaver/blob/master/pics/postpone.png)
+<img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/postpone.png" width="500"/>
 
-![](https://github.com/Macr0phag3/EyesSaver/blob/master/pics/cancel.png)
+<img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/cancel.png" width="500"/>
 
 
 ## 自定义
