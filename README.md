@@ -10,11 +10,12 @@
 市面上的番茄钟都没有自启动的功能，对于经常用电脑的我来说，常常看到眼睛酸涩才想起要休息了。而 EyesSaver 在亮屏的时候自动进入工作计时，就不怕忘记启动番茄钟了。并且息屏事件超过 5 分钟视为休息，解锁唤醒后重新开始工作计时。
 
 ## 如何使用它？
+### 安装依赖
 1. 安装 alerter：https://github.com/vjeantet/alerter
 2. 安装 hammerspoon：http://www.hammerspoon.org/ ，并确保配置如下：
 ![](https://github.com/Macr0phag3/EyesSaver/blob/master/pics/hammer.png)
 
-### 自动配置
+### 方法一、自动配置
 1. 执行 `chmod +x install.sh`，然后运行 `./install.sh`
 2. 根据提示进行配置：
 ```
@@ -41,7 +42,7 @@
 
 3. 启动 hammerspoon
 
-### 手动配置
+### 方法二、手动配置
 1.. 由于每个人放置 EyesSaver 的位置不同，你需要修改以下脚本中的 `saverpath`：
     - alert.sh
     - init.lua
