@@ -10,6 +10,37 @@
 市面上的番茄钟都没有自启动的功能，对于经常用电脑的我来说，常常看到眼睛酸涩才想起要休息了。而 EyesSaver 在亮屏的时候自动进入工作计时，就不怕忘记启动番茄钟了。并且息屏事件超过 5 分钟视为休息，解锁唤醒后重新开始工作计时。
 
 ## 如何使用它？
+### 自动配置
+1. 安装 alerter：https://github.com/vjeantet/alerter
+2. 安装 hammerspoon：http://www.hammerspoon.org/ ，并确保配置如下：
+![](https://github.com/Macr0phag3/EyesSaver/blob/master/pics/hammer.png)
+3. 执行 `chmod +x install.sh`，然后运行 `./install.sh`
+4. 根据提示进行配置：
+```
+» ./install.sh
+> 输入 EyesSaver 的文件路径：
+(如：/home/macr0phag3/EyesSaver/ 那么你需要输入 /home/macr0phag3/EyesSaver/)
+> /Users/macr0phag3/Tr0y/.scripts/EyesSaver
+确定路径是 /Users/macr0phag3/Tr0y/.scripts/EyesSaver ? [y]/n
+> y
+> 执行 crontab -e, 并将以下命令插入
+*/1 * * * * bash /Users/macr0phag3/Tr0y/.scripts/EyesSaver/alert.sh >> /Users/macr0phag3/Tr0y/.scripts/EyesSaver/log 2>&1
+> 完成? [y]/n
+> y
+> 配置 crontab: 完成
+
+> 替换完成路径: 完成
+
+> 初始化工作时间: 完成
+
+> 初始化 HammerSpoon 脚本: 完成
+
+> 记得启动一下 hammerspoon
+```
+
+5. 启动 hammerspoon
+
+### 手动配置
 1. 安装 alerter：https://github.com/vjeantet/alerter
 2. 安装 hammerspoon：http://www.hammerspoon.org/ ，并确保配置如下：
 ![](https://github.com/Macr0phag3/EyesSaver/blob/master/pics/hammer.png)

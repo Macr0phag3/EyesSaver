@@ -1,6 +1,6 @@
 set -o errexit
 
-echo "> 输入 EyesSaver 的文件路径：\n(如：/home/macr0phag3/EyesSaver/ 那么你需要输入 /home/macr0phag3/EyesSaver/)\n> \c"
+echo "> 输入 EyesSaver 的文件路径：\n(如：~/EyesSaver/ 那么你需要输入 /home/macr0phag3/EyesSaver/)\n> \c"
 read saverpath
 echo "确定路径是 $saverpath ? [y]/n\n> \c"
 read answer
@@ -45,6 +45,7 @@ ln init.lua ~/.hammerspoon/
 echo "> 初始化 HammerSpoon 脚本: 完成\n"
 # ----------
 
+echo "> 安心工作去吧 🕶~"
 
 
 
