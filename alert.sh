@@ -31,6 +31,7 @@ if [ "$islocked" == 0 ];then # 未锁定
         if [ "$result" == '好的 ☺️' ]; then
             echo $logtime "开始休息 $resttime 分钟"
             newtimer=$[$rawtime+($resttime+$worktime)*60]
+            echo $newtimer > $saverpath/eyessaver/resttimer
             
             # 启动屏保
             open -a ScreenSaverEngine
@@ -64,9 +65,12 @@ if [ "$islocked" == 0 ];then # 未锁定
                 echo $logtime "已取消本轮休息"
                 newtimer=$[$rawtime+$worktime*60]
             fi
+
+            echo $newtimer > $saverpath/eyessaver/resttimer
+            
         fi
 
-        echo $newtimer > $saverpath/eyessaver/resttimer
+        
     else
         unit="秒"
 
