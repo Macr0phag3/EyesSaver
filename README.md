@@ -76,7 +76,7 @@
 
 <img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/postpone.png" width="500"/>
 
-<img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/cancel.png" width="500"/>
+<img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/cancel-rest.png" width="500"/>
 
 
 ## 自定义
