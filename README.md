@@ -84,7 +84,7 @@
 
 
 ## 不一定会 DO 的 TODO
-- [x] install 脚本，直接配置路径
+- [x] install.sh 直接安装脚本 
 
 
 
