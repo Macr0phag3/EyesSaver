@@ -28,7 +28,7 @@ if [ "$islocked" == 0 ];then # 未锁定
     if [ "$delta" -ge $[$worktime*60] ];then
         result=$(/usr/local/bin/alerter -title "护眼助手🕶" -message "眼睛累了吗? 歇会吧 🤔" -timeout 30s -actions "我在忙呢 😒" -closeLabel "好的 ☺️")
         logtime=$(date +"%Y-%m-%d %H:%M:%S")
-        if [ "$result" == '好的 ☺️' ]; then
+        if [[ "$result" == '好的 ☺️' ]] || [[ "$result" == '@CONTENTCLICKED' ]]; then
             echo $logtime "开始休息 $resttime 分钟"
             newtimer=$[$rawtime+($resttime+$worktime)*60]
             echo $newtimer > $saverpath/resttimer
@@ -41,7 +41,7 @@ if [ "$islocked" == 0 ];then # 未锁定
             # 推迟休息
             result=$(/usr/local/bin/alerter -title "护眼助手🕶" -message "那推迟 $postpone 分钟? 👀" -timeout 10s -actions "不用 😒","推迟 5 分钟 🌕","推迟 10 分钟 🌗","推迟 15 分钟 🌘","推迟 30 分钟 🌚" -dropdownLabel "其他时长" -closeLabel "好的 ☺️")
             logtime=$(date +"%Y-%m-%d %H:%M:%S")
-            if [[ "$result" == '好的 ☺️' ]] || [[ "$result" ==  '@TIMEOUT' ]]; then
+            if [[ "$result" == '好的 ☺️' ]] || [[ "$result" ==  '@TIMEOUT' ]] || [[ "$result" == '@CONTENTCLICKED' ]]; then
                 echo $logtime "本轮休息已推迟 $postpone 分钟"
                 newtimer=$[$rawtime+$postpone*60]
 

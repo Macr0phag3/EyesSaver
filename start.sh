@@ -21,7 +21,7 @@ if [ "$delta" -ge $[10] ];then # 锁屏超过 3 分钟，说明是在休息，�
     isrested=$(ps -ef|grep "sleep [0-9]*eyesaver")
     if [ -n "$isrested" ]; then 
         result=$(/usr/local/bin/alerter -title "护眼助手🕶" -subtitle "你休息了 $thetime $unit" -message "要提前结束休息吗? 🤔" -timeout 10s -actions "不用 😒" -closeLabel "好的 ☺️")
-        if [ "$result" == '好的 ☺️' ]; then
+        if [[ "$result" == '好的 ☺️' ]] || [[ "$result" == '@CONTENTCLICKED' ]]; then
             echo $logtime "提前结束休息" >> $saverpath/log
             ps -ef|grep "sleep [0-9]*eyesaver"| awk '{print $2}'| xargs kill -9
             # 休息结束，重置工作计时器
