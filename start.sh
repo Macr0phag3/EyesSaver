@@ -4,6 +4,8 @@
 saverpath="eyessaver's path"
 ###
 
+source $saverpath"/config.sh"
+
 rawtime=$(cat $saverpath/lockedtimer)
 delta=$[$(date +%s)-$rawtime]
 logtime=$(date +"%Y-%m-%d %H:%M:%S")
@@ -16,10 +18,9 @@ if [[ $delta -gt 60 ]]; then
 fi
 
 if [ "$delta" -ge $[3*60] ];then # 锁屏超过 3 分钟，说明是在休息，否则视为临时有事
-
     # 停止 sleep，弹出工作提醒
     isrested=$(ps -ef|grep "sleep [0-9]*eyesaver")
-    if [ -n "$isrested" ]; then 
+    if [[ -n "$isrested" ]] && [[ $delta -lt $[$resttime*60] ]]; then # 防止超过休息时间的提醒
         result=$(/usr/local/bin/alerter -title "护眼助手🕶" -subtitle "你休息了 $thetime $unit" -message "要提前结束休息吗? 🤔" -timeout 10s -actions "不用 😒" -closeLabel "好的 ☺️")
         if [[ "$result" == '好的 ☺️' ]] || [[ "$result" == '@CONTENTCLICKED' ]]; then
             echo $logtime "提前结束休息" >> $saverpath/log
