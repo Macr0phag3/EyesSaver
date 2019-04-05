@@ -18,7 +18,6 @@ postpone=10 # 推迟时间(分)
 saverpath="eyessaver's path"
 ### 
 
-
 rawtime=$(cat $saverpath/resttimer)
 delta=$[$(date +%s)-$rawtime]
 islocked=$(cat $saverpath/islocked)
@@ -92,6 +91,3 @@ if [ "$islocked" == 0 ];then # 未锁定
 else
     echo $logtime "已启动屏保，休息中"
 fi
-
-
-
