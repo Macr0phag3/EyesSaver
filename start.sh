@@ -15,7 +15,7 @@ if [[ $delta -gt 60 ]]; then
     thetime=`echo $(($delta/60))|awk '{printf("%.1f", $1)}'`
 fi
 
-if [ "$delta" -ge $[10] ];then # 锁屏超过 3 分钟，说明是在休息，否则视为临时有事
+if [ "$delta" -ge $[3*60] ];then # 锁屏超过 3 分钟，说明是在休息，否则视为临时有事
 
     # 停止 sleep，弹出工作提醒
     isrested=$(ps -ef|grep "sleep [0-9]*eyesaver")
