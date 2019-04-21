@@ -32,6 +32,7 @@ if [ "$delta" -ge $[3*60] ];then # 锁屏超过 3 分钟，说明是在休息，
     else
         date +%s > $saverpath/resttimer
         echo $logtime "检测到解锁事件，休息时长 $thetime $unit""，休息结束，开始工作，重置工作计时器" >> $saverpath/log
+        ps -ef|grep "sleep [0-9]*eyesaver"| awk '{print $2}'| xargs kill -9
     fi
 else
     echo $logtime "检测到解锁事件，休息时长 $thetime $unit""，视为临时打断工作，不重置工作计时器" >> $saverpath/log
