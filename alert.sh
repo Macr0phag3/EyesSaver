@@ -36,29 +36,30 @@ if [ "$islocked" == 0 ];then # 未锁定
             # 推迟休息
             result=$(/usr/local/bin/alerter -title "护眼助手🕶" -message "那推迟 $postpone 分钟? 👀" -timeout 10s -actions "不用 😒","推迟 5 分钟 🌕","推迟 10 分钟 🌗","推迟 15 分钟 🌘","推迟 30 分钟 🌚" -dropdownLabel "其他时长" -closeLabel "好的 ☺️")
             logtime=$(date +"%Y-%m-%d %H:%M:%S")
+            nowtime=$(date +%s)
             if [[ "$result" == '好的 ☺️' ]] || [[ "$result" ==  '@TIMEOUT' ]] || [[ "$result" == '@CONTENTCLICKED' ]]; then
                 echo $logtime "本轮休息已推迟 $postpone 分钟"
-                newtimer=$[$rawtime+$postpone*60]
+                newtimer=$[$nowtime+$postpone*60]
 
             elif  [ "$result" == '推迟 5 分钟 🌕' ]; then 
                 echo $logtime "本轮休息已推迟 5 分钟"
-                newtimer=$[$rawtime+5*60]
+                newtimer=$[$nowtime+5*60]
 
             elif  [ "$result" == '推迟 10 分钟 🌗' ]; then 
                 echo $logtime "本轮休息已推迟 10 分钟"
-                newtimer=$[$rawtime+10*60]
+                newtimer=$[$nowtime+10*60]
 
             elif  [ "$result" == '推迟 15 分钟 🌘' ]; then 
                 echo $logtime "本轮休息已推迟 15 分钟"
-                newtimer=$[$rawtime+15*60]
+                newtimer=$[$nowtime+15*60]
 
             elif  [ "$result" == '推迟 30 分钟 🌚' ]; then 
                 echo $logtime "本轮休息已推迟 30 分钟"
-                newtimer=$[$rawtime+30*60]
+                newtimer=$[$nowtime+30*60]
 
             else
                 echo $logtime "已取消本轮休息"
-                newtimer=$[$rawtime+$worktime*60]
+                newtimer=$[+$nowtime*60]
             fi
 
             echo $newtimer > $saverpath/resttimer
