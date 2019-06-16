@@ -10,7 +10,7 @@
 
 ### location
 saverpath="eyessaver's path"
-### 
+###
 
 source $saverpath"/config.sh"
 
@@ -39,39 +39,39 @@ if [ "$islocked" == 0 ];then # 未锁定
             nowtime=$(date +%s)
             if [[ "$result" == '好的 ☺️' ]] || [[ "$result" ==  '@TIMEOUT' ]] || [[ "$result" == '@CONTENTCLICKED' ]]; then
                 echo $logtime "本轮休息已推迟 $postpone 分钟"
-                newtimer=$[$nowtime+$postpone*60]
 
-            elif  [ "$result" == '推迟 5 分钟 🌕' ]; then 
+            elif  [ "$result" == '推迟 5 分钟 🌕' ]; then
                 echo $logtime "本轮休息已推迟 5 分钟"
-                newtimer=$[$nowtime+5*60]
+                postpone=5
 
-            elif  [ "$result" == '推迟 10 分钟 🌗' ]; then 
+            elif  [ "$result" == '推迟 10 分钟 🌗' ]; then
                 echo $logtime "本轮休息已推迟 10 分钟"
-                newtimer=$[$nowtime+10*60]
+                postpone=10
 
-            elif  [ "$result" == '推迟 15 分钟 🌘' ]; then 
+            elif  [ "$result" == '推迟 15 分钟 🌘' ]; then
                 echo $logtime "本轮休息已推迟 15 分钟"
-                newtimer=$[$nowtime+15*60]
+                postpone=15
 
-            elif  [ "$result" == '推迟 30 分钟 🌚' ]; then 
+            elif  [ "$result" == '推迟 30 分钟 🌚' ]; then
                 echo $logtime "本轮休息已推迟 30 分钟"
-                newtimer=$[$nowtime+30*60]
+                postpone=30
 
             else
                 echo $logtime "已取消本轮休息"
-                newtimer=$[+$nowtime*60]
+                postpone=$worktime
             fi
 
+            newtimer=$[$nowtime-($worktime-$postpone)*60]
             echo $newtimer > $saverpath/resttimer
-            
+
         fi
-        
+
     else
         unit="秒"
 
         if [ "$delta" -ge 0 ];then # 大于 0 说明在工作状态
             delta=$[$worktime*60-$delta]
-            tip="工作" 
+            tip="工作"
         else
             delta=$[0-$delta]
             tip="休息"
@@ -81,7 +81,7 @@ if [ "$islocked" == 0 ];then # 未锁定
             unit="分钟"
             delta=`echo $(($delta/60))|awk '{printf("%.1f", $1)}'`
         fi
-        
+
         echo $logtime $tip"倒计时: $delta $unit"
 
     fi
