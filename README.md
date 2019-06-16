@@ -74,7 +74,7 @@
 
 <img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/have-rest.png" width="500"/>
 
-<img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/postpone.png" width="500"/>
+<img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/2019-06-16_22-04-21.png" width="500"/>
 
 <img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/cancel-rest.png" width="500"/>
 
