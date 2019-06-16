@@ -72,7 +72,7 @@
 
 通知：
 
-<img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/have-rest.png" width="500"/>
+<img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/notify.png" width="500"/>
 
 <img src="https://raw.githubusercontent.com/Macr0phag3/EyesSaver/master/pics/2019-06-16_22-04-21.png" width="500"/>
 
